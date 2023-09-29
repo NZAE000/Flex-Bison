@@ -26,7 +26,7 @@ OBJSUBDIR 	:= $(patsubst $(SRC)%,$(OBJ)%,$(SUBDIRS))
 ALLCS	  	:= $(shell find $(SRC) -type f -iname *.c)
 ALLOBJS	    := $(foreach F,$(ALLCS),$(call TO,$(F)))
 ARFLAGS		:= -rcs
-INCLUDE   	:= -I $(SRC)  -I/usr/include
+INCLUDE   	:= -I $(SRC) -I/usr/include -I/opt/X11/include
 
 .PHONY:  info clean cleanall
 

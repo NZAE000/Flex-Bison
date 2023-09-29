@@ -9,7 +9,7 @@ $(5) : $(3)
 	$(1) $(2) -c $(3) $(4) -o $(5)
 endef
 
-
+UNAME   := $(shell uname)
 APP     := draw
 CC		:= g++
 CFLAGS  := -std=c++20 -Wall
@@ -20,7 +20,14 @@ OBJ     := obj
 LIB     := lib
 INCLUDE := -I $(SRC) -I $(LIB)
 STCKLIBS := $(shell find $(LIB) -type f -iname *.a)
-LIBS     := $(STCKLIBS) -ll -lX11
+LIBS     := $(STCKLIBS) -ll
+
+
+ifeq ($(UNAME),Linux)
+	LIBS += -lX11
+else
+	LIBS += /opt/X11/lib/libX11.dylib
+endif
 
 # SCANNER AND PARSER ABOUT QUESTION N ##########################
 SCANFILE  := $(shell find $(SRC)/$(Q) -type f -iname *.l)
