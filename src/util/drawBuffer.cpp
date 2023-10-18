@@ -1,6 +1,5 @@
 #include "drawBuffer.hpp"
 
-
 uint32_t* FrameBuffer_t::getPosition(uint32_t x, uint32_t y) const noexcept 
 { 
 	return frameBuff.get() + this->width*y + x; 

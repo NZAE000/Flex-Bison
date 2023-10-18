@@ -18,7 +18,7 @@ Q       := question4
 SRC	    := src
 OBJ     := obj
 LIB     := lib
-INCLUDE := -I $(SRC) -I $(LIB)
+INCLUDE := -I $(SRC) -I $(LIB) -I/usr/include -I/opt/X11/include
 STCKLIBS := $(shell find $(LIB) -type f -iname *.a)
 LIBS     := $(STCKLIBS) -ll
 

@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <memory>
+#include <algorithm>
 extern "C" {
 	#include <tinyPTC.ua/src/tinyptc.h>
 }
